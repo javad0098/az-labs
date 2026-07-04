@@ -18,15 +18,17 @@ When Java asks you to design a lab (e.g., `"Yo bro, design me Lab 31"`):
 2.  **Determine Directory Name**: Generate a hyphenated lowercase folder name: `az-labs/lab-[three-digit-number]-[short-slug]/`.
     *   *Example*: `az-labs/lab-031-service-bus-queue/`.
 3.  **Generate Lab Files**: Create the folder and write the following files:
-    *   **`README.md`**: The hands-on manual (see structure below).
-    *   **Boilerplate / Code files**:
-        *   If the lab uses **Terraform/IaC**: Include a basic `main.tf` and `variables.tf`.
-        *   If the lab uses **Azure Functions**: Include a skeleton python/typescript project structure.
-        *   If the lab uses **Logic Apps**: Include placeholder/mock configurations or template JSONs.
-4.  **Inform Java**: Once files are written, output a summary explaining:
-    *   The location of the new lab folder.
-    *   A high-level explanation of the resources they will build.
-    *   How to verify their implementation.
+    *   **`README.md`**: The hands-on manual showing how to run the scripts to deploy and test.
+    *   **`main.bicep`**: The Bicep template defining the lab's infrastructure. Every single lab must use Bicep for infrastructure setup, starting from Lab 1.
+    *   **`deploy.ps1`**: A PowerShell script using Azure CLI (`az deployment group create`) or Azure PowerShell Module (`New-AzResourceGroupDeployment`) to provision the resource group and deploy the Bicep template.
+    *   **`destroy.ps1`**: A PowerShell script using Azure CLI (`az group delete`) or Azure PowerShell Module (`Remove-AzResourceGroup`) to immediately delete the resource group, ensuring zero ongoing costs.
+    *   **Application / Logic / Function Code**:
+        *   If the lab uses **Azure Functions**: Include Python/Node.js starter files.
+        *   If the lab uses **Logic Apps**: Include workflow JSON templates.
+4.  **Inform Java**: Output a summary explaining:
+    *   Where the lab folder is.
+    *   How to run `deploy.ps1` to create and `destroy.ps1` to tear it down.
+    *   A high-level overview of the resources.
 
 ---
 
@@ -47,14 +49,14 @@ Show how resources connect.
 Help transition AWS concepts (e.g., SQS -> Service Bus Queue).
 
 ## 🚀 Step-by-Step Instructions
-Clear, actionable steps:
-1. Prerequisites/Setup.
-2. Building/Writing the code (Portal or CLI/IaC).
-3. Testing execution.
+1. Prerequisites & Azure login (`Connect-AzAccount` or `az login`).
+2. Run `.\deploy.ps1` in PowerShell to create the environment.
+3. Build, test, and observe the results (e.g. portal verification, curl commands).
+4. Run `.\destroy.ps1` in PowerShell to clean up.
 
 ## 🔍 Verification Steps
-What commands to run or what to look for in the Portal to verify success.
+What commands to run or what to check to verify success.
 
 ## 🧹 Cleanup
-Command to delete resources so they don't accrue costs (e.g., `az group delete`).
+Explicit instructions to run `.\destroy.ps1` to avoid costs.
 ```

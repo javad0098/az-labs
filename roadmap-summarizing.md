@@ -2,6 +2,9 @@
 
 This document provides a summary of the 90-lab Azure learning roadmap designed for Java. It outlines the core focus, milestones, and progression of each phase to help you plan your daily schedule.
 
+> [!TIP]
+> **IaC & Automation from Day 1:** Every single lab (starting from Phase 1, Lab 1) uses **Bicep** templates and **PowerShell scripts (`deploy.ps1` / `destroy.ps1`)** for provisioning and tearing down resources. You will not need to do slow manual configuration in the Azure Portal, and you can destroy resources instantly to avoid any cloud costs.
+
 ---
 
 ## 📅 Suggested Learning Schedule
@@ -13,7 +16,8 @@ This document provides a summary of the 90-lab Azure learning roadmap designed f
 ## 🗺️ Phase-by-Phase Roadmap Summary
 
 ### Phase 1: Azure Foundations for AWS Veterans (Labs 1–15)
-*   **Focus**: Essential Azure components, resource management, security, and networking.
+*   **Focus**: Essential Azure components, resource management, security, and networking—all deployed using **Bicep** and **PowerShell / Azure CLI**.
+
 *   **AWS Mapping**: Transition VPC, EC2, IAM, S3, KMS, and CloudWatch knowledge.
 *   **Key Services**: VNets, NSGs, Azure Bastion, Microsoft Entra ID, Storage Accounts, Key Vault, Azure Policy.
 *   **Milestone**: Deploy a secure, isolated VM accessed via Bastion with passwordless storage access.
