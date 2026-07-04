@@ -55,6 +55,13 @@ This document provides a summary of the 90-lab Azure learning roadmap designed f
 ---
 
 ## 🤖 Launching a Lab
-To have the **Azure Lab Designer** agent generate any lab's workspace (instructions and code boilerplate) inside your `az-labs/` directory, simply ask:
+To have the **Azure Lab Designer** agent generate any lab's workspace inside your `az-labs/` directory, simply ask:
 
 > **"Yo bro, design me Lab [Number]"**
+
+When triggered, the agent will create a folder containing:
+*   `README.md`: The step-by-step hands-on guide.
+*   `main.bicep`: The infrastructure template.
+*   `deploy.ps1` & `destroy.ps1`: Scripts to easily create and destroy the lab.
+*   `k-test.md`: A knowledge test with high-quality scenario questions and detailed explanations.
+
