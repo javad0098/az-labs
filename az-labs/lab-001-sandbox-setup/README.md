@@ -50,11 +50,14 @@ Before starting, ensure you have the Azure CLI installed.
    ```powershell
    cd az-labs/lab-001-sandbox-setup
    ```
-2. Execute the PowerShell script to deploy the resource group using Bicep:
+2. Execute the PowerShell script to deploy the resource group using Bicep. 
+   
+   If you have multiple subscriptions and want to switch to a specific one, pass the **Subscription Name or ID** as a parameter:
    ```powershell
-   .\deploy.ps1
+   .\deploy.ps1 -SubscriptionNameOrId "YOUR_SUBSCRIPTION_NAME_OR_ID"
    ```
-   *This script checks your login state, reads `main.bicep`, and deploys the resource group `rg-lab001-dev` in the `westeurope` region at the subscription target scope.*
+   *Note: If you do not specify a subscription, the script will run using your currently active Azure CLI context subscription ($account).*
+   *Corporate Note: The script automatically disables the online Bicep integrity check (`az config set integrity.check_bicep=false`) to bypass corporate SSL certificate verify failures.*
 
 ### 3. Verify Deployment
 1. Verify the resource group exists using the Azure CLI:
@@ -64,9 +67,9 @@ Before starting, ensure you have the Azure CLI installed.
 2. Look at the properties output to verify the tags: `Environment: Dev` and `Lab: 001`.
 
 ### 4. Clean Up
-To prevent any future resource usage or clutter, run the cleanup script:
+To prevent any future resource usage or clutter, run the cleanup script (matching the subscription if you switched earlier):
 ```powershell
-.\destroy.ps1
+.\destroy.ps1 -SubscriptionNameOrId "YOUR_SUBSCRIPTION_NAME_OR_ID"
 ```
 *This command sends a deletion signal to Azure to asynchronously delete the resource group. You can verify it is deleted by running `az group list`.*
 

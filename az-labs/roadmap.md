@@ -20,7 +20,14 @@ graph TD
 ## 🛠️ Phase 1: Azure Foundations for AWS Veterans (Labs 1–15)
 *Goal: Understand core Azure constructs, networking, security, and storage by mapping them to AWS equivalents.*
 
+### LAB-000: Azure Subscription Management
+*   **Goal**: List all active subscriptions, inspect current active contexts, and switch between subscriptions using CLI and PowerShell.
+*   **AWS Equivalent**: AWS CLI Named Profiles (`--profile`) and account switching.
+*   **Learning Links**: [Manage Azure subscriptions](https://learn.microsoft.com/en-us/cli/azure/manage-azure-subscriptions-azure-cli) | [Switch contexts](https://learn.microsoft.com/en-us/powershell/azure/manage-subscriptions-azureps)
+*   **Design Spec**: Authenticate CLI, list subscriptions in table output, set target subscription active, verify active context.
+
 ### LAB-001: Azure Subscription & Sandbox Setup
+
 *   **Goal**: Create and navigate an Azure account, set up a subscription, and configure the Azure CLI.
 *   **AWS Equivalent**: AWS Account / AWS Organizations & AWS CLI setup.
 *   **Learning Links**: [Azure account setup](https://learn.microsoft.com/en-us/training/modules/create-an-azure-account/) | [Azure CLI installation](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli)

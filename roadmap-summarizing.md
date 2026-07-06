@@ -15,11 +15,11 @@ This document provides a summary of the 90-lab Azure learning roadmap designed f
 
 ## 🗺️ Phase-by-Phase Roadmap Summary
 
-### Phase 1: Azure Foundations for AWS Veterans (Labs 1–15)
+### Phase 1: Azure Foundations for AWS Veterans (Labs 0–15)
 *   **Focus**: Essential Azure components, resource management, security, and networking—all deployed using **Bicep** and **PowerShell / Azure CLI**.
-
 *   **AWS Mapping**: Transition VPC, EC2, IAM, S3, KMS, and CloudWatch knowledge.
-*   **Key Services**: VNets, NSGs, Azure Bastion, Microsoft Entra ID, Storage Accounts, Key Vault, Azure Policy.
+*   **Key Services**: Subscriptions (LAB-000), VNets, NSGs, Azure Bastion, Microsoft Entra ID, Storage Accounts, Key Vault, Azure Policy.
+
 *   **Milestone**: Deploy a secure, isolated VM accessed via Bastion with passwordless storage access.
 
 ### Phase 2: Azure Developer & Serverless Foundations (Labs 16–30)
